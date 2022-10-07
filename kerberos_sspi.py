@@ -26,9 +26,9 @@ logger = logging.getLogger(__name__)
 
 if sys.version_info >= (3,0):
     def decodestring(stringvalue):
-        return base64.decodestring(stringvalue.encode("ascii"))
+        return base64.decodebytes(stringvalue.encode("ascii"))
     def encodestring(bytesvalue):
-        return base64.encodestring(bytesvalue).decode("utf-8")
+        return base64.encodebytes(bytesvalue).decode("utf-8")
 else:
     def decodestring(stringvalue):
         return base64.decodestring(stringvalue)
