@@ -5,18 +5,18 @@ import sys
 
 if sys.version_info >= (3,0):
     def decodestring(stringvalue):
-        return base64.decodestring(stringvalue.encode("ascii"))
+        return base64.decodebytes(stringvalue.encode("ascii"))
     def encodestring(bytesvalue):
-        return base64.encodestring(bytesvalue).decode("utf-8")
+        return base64.encodebytes(bytesvalue).decode("utf-8")
     def b(stringvalue):
         return stringvalue.encode("ascii")
     def u(stringvalue):
         return stringvalue
 else:
     def decodestring(stringvalue):
-        return base64.decodestring(stringvalue)
+        return base64.decodebytes(stringvalue)
     def encodestring(bytesvalue):
-        return base64.encodestring(bytesvalue)
+        return base64.encodebytes(bytesvalue)
     def b(stringvalue):
         return stringvalue
     def u(stringvalue):
